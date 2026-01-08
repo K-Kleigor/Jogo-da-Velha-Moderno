@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento: indica que este é um documento HTML5 -->
+
+<html lang="pt-AO">
+<!-- Tag raiz do documento HTML. O atributo lang="pt-AO" define o idioma como português de Angola -->
+
+  <head>
+    <!-- Seção de metadados do documento (não visível na página, mas importante para navegadores e SEO) -->
+
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres como UTF-8, permitindo acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configuração essencial para responsividade em dispositivos móveis: ajusta a largura à tela e escala inicial 1:1 -->
+
+    <title>Jogo da Velha Pro</title>
+    <!-- Título da página que aparece na aba do navegador -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Importa a fonte Inter do Google Fonts com vários pesos para uso tipográfico consistente -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Carrega o Tailwind CSS diretamente no navegador (versão para desenvolvimento/experimentação). Não recomendado em produção -->
+
+    <style>
+      /* Estilos personalizados que complementam o Tailwind */
+
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Define a fonte Inter como padrão para todo o corpo da página */
+      }
+
+      .glass {
+        /* Efeito de vidro fosco (glassmorphism) para elementos com esta classe */
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit (Safari) */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .dark .glass {
+        /* Versão do efeito glass adaptada ao modo escuro */
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .neon-text-blue {
+        /* Efeito de brilho neon azul para textos */
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+
+      .neon-text-pink {
+        /* Efeito de brilho neon rosa para textos */
+        text-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+      }
+
+      .cell-glow-blue {
+        /* Brilho interno azul para células do jogo (provavelmente quando o jogador X marca) */
+        box-shadow: inset 0 0 15px rgba(59, 130, 246, 0.2);
+      }
+
+      .cell-glow-pink {
+        /* Brilho interno rosa para células do jogo (provavelmente quando o jogador O marca) */
+        box-shadow: inset 0 0 15px rgba(236, 72, 153, 0.2);
+      }
+    </style>
+    <!-- Fim dos estilos personalizados -->
+
+    <script type="importmap">
+    {
+      "imports": {
+        /* Mapeamento de importações para módulos ESM (ECMAScript Modules) via CDN esm.sh */
+        /* Isso permite usar importações modernas (import ... from ...) diretamente no navegador sem bundler */
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "zustand": "https://esm.sh/zustand@^5.0.9",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+        "react-confetti": "https://esm.sh/react-confetti@^6.4.0",
+        "vite": "https://esm.sh/vite@^7.3.0",
+        "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+      }
+    }
+    </script>
+    <!-- O importmap resolve as dependências do React e outras bibliotecas usadas no código TypeScript/React -->
+
+  </head>
+  <!-- Fim da seção <head> -->
+
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <!-- Corpo da página com classes Tailwind:
+         - Fundo claro (slate-50) e escuro (slate-950)
+         - Transição suave ao trocar entre modos claro/escuro -->
+
+    <div id="root"></div>
+    <!-- Div vazia onde o React vai injetar toda a aplicação (ponto de montagem do React) -->
+
+    <script type="module" src="/index.tsx"></script>
+    <!-- Carrega o arquivo principal da aplicação (index.tsx) como módulo ES.
+         Este arquivo contém o código React/TypeScript que será renderizado dentro do #root -->
+
+  </body>
+  <!-- Fim do corpo da página -->
+
+</html>
+<!-- Fim do documento HTML -->

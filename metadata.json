@@ -1,0 +1,5 @@
+{
+  "name": "Jogo da Velha Pro",
+  "description": "Um clássico jogo da velha com uma interface moderna e interativa, desenvolvido com React e Tailwind CSS.",
+  "requestFramePermissions": []
+}
